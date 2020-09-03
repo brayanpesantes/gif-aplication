@@ -14,7 +14,10 @@ const SearchResults = ({ params }) => {
 					<Spinner />
 				</div>
 			) : (
-				<ListOfGif gifs={gifs} />
+				<>
+					<h3>{decodeURI(keyword)}</h3>
+					<ListOfGif gifs={gifs} />
+				</>
 			)}
 		</div>
 	);

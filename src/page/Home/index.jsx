@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { useGifs } from "../../hooks/useGifs";
 import ListOfGif from "../../components/ListOfGif";
 import Spinner from "../../components/Spinner";
+import TredingShearches from "../../components/TrendingSearches";
 
 const POPULARES_GIFS = ["matrix", "peru", "machupichu", "cajamarca"];
 
@@ -50,23 +51,18 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<h3>los gifs mas populares</h3>
+			<h3>Última Búsqueda</h3>
+
+			{loading ? (
+				<div className="col-md-4 offset-4">
+					<Spinner />
+				</div>
+			) : (
+				<ListOfGif gifs={gifs} />
+			)}
 			<div>
-				{loading ? (
-					<div className="col-md-4 offset-4">
-						<Spinner />
-					</div>
-				) : (
-					<ListOfGif gifs={gifs} />
-				)}
+				<TredingShearches />
 			</div>
-			<ul>
-				{POPULARES_GIFS.map((popularGifs) => (
-					<li key={popularGifs}>
-						<Link to={`/search/${popularGifs}`}>Gif de {popularGifs}</Link>
-					</li>
-				))}
-			</ul>
 		</>
 	);
 };
