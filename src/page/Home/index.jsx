@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { useGifs } from "../../hooks/useGifs";
-import ListOfGif from "../../components/ListOfGif";
-import Spinner from "../../components/Spinner";
-import TredingShearches from "../../components/TrendingSearches";
+import { useGifs } from "hooks/useGifs";
+import ListOfGif from "components/ListOfGif";
+import Spinner from "components/Spinner";
+import TredingShearches from "components/TrendingSearches";
 
 const POPULARES_GIFS = ["matrix", "peru", "machupichu", "cajamarca"];
 
